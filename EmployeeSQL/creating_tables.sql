@@ -10,6 +10,8 @@ CREATE TABLE titles (
 	PRIMARY KEY (title_id)
 );
 
+--Error occured during import when hire_date was assigned as DATE, so changed to VARCHAR
+--Will modify the datatype during the analysis process
 CREATE TABLE employees (
 	emp_no INT NOT NULL,
 	emp_title_id VARCHAR NOT NULL,	
@@ -17,7 +19,7 @@ CREATE TABLE employees (
 	first_name VARCHAR,
 	last_name VARCHAR,	
 	sex VARCHAR(1),
-	hire_date DATE,
+	hire_date VARCHAR,
 	PRIMARY KEY (emp_no),
 	FOREIGN KEY (emp_title_id) REFERENCES titles (title_id)
 );

@@ -45,7 +45,7 @@ AND last_name like 'B%'
 
 -- List each employee in the Sales department, including their employee number, last name, and first name.
 
-SELECT emp_no, first_name, last_name 
+SELECT emp_no, first_name, last_name
 FROM employees
 WHERE emp_no IN
 	(SELECT emp_no
@@ -66,6 +66,7 @@ ON de.emp_no=e.emp_no
 WHERE dept_name='Sales' OR dept_name='Development';
 
 -- List the frequency counts, in descending order, of all the employee last names (that is, how many employees share each last name).
+
 SELECT last_name, COUNT(last_name) AS last_name_count
 FROM employees
 GROUP BY last_name
